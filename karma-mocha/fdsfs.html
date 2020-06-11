@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function trim(string) {
+    return string.replace(/(^\s+)|(\s+$)/g, '')
+  }
+
+  function getType (obj) {
+    return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
+  }
+
+  function trimRequest (obj) {
+    if (getType(obj) === 'string') {
+      return trim(obj)
+    }
+
+    if (getType(obj) === 'array') {
+      return obj.map(item => trimRequest(item))
+    }
+
+    if (getType(obj) === 'object') {
+      const option = {}
+      for (const [key, value] of Object.entries(obj)) {
+        option[key] = trimRequest(value)
+      }
+      return option
+    }
+    return obj
+  }
+  var prints = trimRequest({
+    a: '     arr',
+    b: 'arr      ',
+    c: '     a r r      ',
+    d: ['     arr', 'arr      ', '     a r r      ']
+  });
+
+  console.log(prints)
+
+</script>
+</body>
+</html>
