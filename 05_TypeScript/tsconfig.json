@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "sourceMap": true,
+    "types" : [
+      "mocha",
+      "expect.js"
+    ],
+    "lib": [
+      "dom",
+      "es6",
+      "scripthost",
+      "es2015",
+      "es2016",
+      "es2017"
+    ]
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "exclude": [
+    "base.spec.ts",
+    "src/*.spec.ts",
+    "node_modules"
+  ],
+  "include": [
+    "src",
+    "test"
+  ]
+}
