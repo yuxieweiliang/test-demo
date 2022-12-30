@@ -30,7 +30,7 @@
     "karma-should": "^1.0.0",
     "karma-sinon": "^1.0.5",
     "typescript": "latest",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "phantomjs": "^2.1.7",
     "should": "^13.2.1",
     "sinon": "^4.2.2"
